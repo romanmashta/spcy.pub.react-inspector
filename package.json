@@ -1,5 +1,5 @@
 {
-  "name": "react-inspector",
+  "name": "@spcy/pub.react-inspector",
   "version": "5.0.1",
   "description": "Power of Browser DevTools inspectors right inside your React app",
   "keywords": [
@@ -35,6 +35,8 @@
   "scripts": {
     "build": "rollup -c",
     "build-storybook": "build-storybook -o storybook-static",
+    "pub:clean": "yarn clean",
+    "pub:build": "yarn build",
     "chromatic": "CHROMATIC_APP_CODE=17yeg4lpa7q chromatic",
     "clean": "rimraf dist",
     "lint": "eslint src --fix",

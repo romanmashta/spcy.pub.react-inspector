@@ -87,11 +87,11 @@ const createIterator = (showNonenumerable, sortObjectKeys) => {
   return objectIterator;
 };
 
-const defaultNodeRenderer = ({ depth, name, data, isNonenumerable }) =>
+const defaultNodeRenderer = ({ depth, name, data, type, isNonenumerable }) =>
   depth === 0 ? (
     <ObjectRootLabel name={name} data={data} />
   ) : (
-    <ObjectLabel name={name} data={data} isNonenumerable={isNonenumerable} />
+    <ObjectLabel name={name} type={type} data={data} isNonenumerable={isNonenumerable} />
   );
 
 /**
@@ -101,9 +101,10 @@ const ObjectInspector = ({
   showNonenumerable = false,
   sortObjectKeys,
   nodeRenderer,
+  objectIterator,
   ...treeViewProps
 }) => {
-  const dataIterator = createIterator(showNonenumerable, sortObjectKeys);
+  const dataIterator = objectIterator || createIterator(showNonenumerable, sortObjectKeys);
   const renderer = nodeRenderer ? nodeRenderer : defaultNodeRenderer;
 
   return (

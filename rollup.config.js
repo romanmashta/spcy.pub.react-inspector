@@ -23,7 +23,7 @@ export default [
         mainFields: ['module', 'jsnext:main', 'main'],
       }),
       commonjs({
-        include: 'node_modules/**',
+        include: '../../../node_modules/**',
       }),
       babel({ runtimeHelpers: true }),
     ],
@@ -43,7 +43,7 @@ export default [
         mainFields: ['module', 'jsnext:main', 'main'],
       }),
       commonjs({
-        include: 'node_modules/**',
+        include: '../../../node_modules/**',
       }),
       babel({ runtimeHelpers: true }),
     ],
@@ -68,7 +68,7 @@ export default [
       }),
       commonjs({
         namedExports: {
-          'node_modules/react/index.js': [
+          '../../../node_modules/react/index.js': [
             'useContext',
             'useLayoutEffect',
             'useCallback',
