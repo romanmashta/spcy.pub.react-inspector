@@ -24,7 +24,7 @@ const ObjectLabel = ({ name, data, type, isNonenumerable = false }) => {
       )}
       <span>: </span>
       <span style={mkStyle('objectValueUndefined')}>{type} </span>
-      <ObjectValue object={object} />
+      <ObjectValue object={object} type={type} />
     </span>
   );
 };

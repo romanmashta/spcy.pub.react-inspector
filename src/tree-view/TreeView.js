@@ -15,8 +15,9 @@ import {
 } from './pathUtils';
 
 import { useStyles } from '../styles';
+import {observer} from "mobx-react";
 
-const ConnectedTreeNode = memo(props => {
+const ConnectedTreeNode = observer(props => {
   const { data, dataIterator, path, depth, nodeRenderer } = props;
   const [expandedPaths, setExpandedPaths] = useContext(ExpandedPathsContext);
   const nodeHasChildNodes = hasChildNodes(data, dataIterator);

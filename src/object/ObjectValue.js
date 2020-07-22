@@ -8,7 +8,7 @@ import { useStyles } from '../styles';
  * Can be used to render tree node in ObjectInspector
  * or render objects in TableInspector.
  */
-const ObjectValue = ({ object, styles }) => {
+const ObjectValue = ({ object, type, styles }) => {
   const themeStyles = useStyles('ObjectValue');
 
   const mkStyle = key => ({ ...themeStyles[key], ...styles });
@@ -40,6 +40,9 @@ const ObjectValue = ({ object, styles }) => {
       }
       if (Array.isArray(object)) {
         return <span>{`Array(${object.length})`}</span>;
+      }
+      if(type){
+        return <span style={mkStyle('objectValueUndefined')}></span>;
       }
       if (!object.constructor) {
         return <span>Object</span>;

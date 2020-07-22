@@ -23,7 +23,7 @@ export default [
         mainFields: ['module', 'jsnext:main', 'main'],
       }),
       commonjs({
-        include: '../../../node_modules/**',
+        include: /node_modules/,
       }),
       babel({ runtimeHelpers: true }),
     ],
@@ -43,7 +43,7 @@ export default [
         mainFields: ['module', 'jsnext:main', 'main'],
       }),
       commonjs({
-        include: '../../../node_modules/**',
+        include: /node_modules/,
       }),
       babel({ runtimeHelpers: true }),
     ],
@@ -77,6 +77,10 @@ export default [
             'createContext',
             'memo',
             'Children',
+            'forwardRef',
+            'PureComponent',
+            'Component',
+            'createElement',
           ],
         },
       }),
