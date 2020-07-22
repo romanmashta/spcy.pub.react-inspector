@@ -38,11 +38,11 @@ const ObjectValue = ({ object, type, styles }) => {
           <span style={mkStyle('objectValueRegExp')}>{object.toString()}</span>
         );
       }
-      if (Array.isArray(object)) {
-        return <span>{`Array(${object.length})`}</span>;
-      }
       if(type){
         return <span style={mkStyle('objectValueUndefined')}></span>;
+      }
+      if (Array.isArray(object)) {
+        return <span>{`Array(${object.length})`}</span>;
       }
       if (!object.constructor) {
         return <span>Object</span>;
