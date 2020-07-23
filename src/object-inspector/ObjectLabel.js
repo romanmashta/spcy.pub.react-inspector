@@ -6,14 +6,18 @@ import ObjectPreview from './ObjectPreview';
 
 import { useStyles } from '../styles';
 
+const emptyDecorator = props => <>{props.children}</>
+
 /**
  * if isNonenumerable is specified, render the name dimmed
  */
-const ObjectLabel = ({ name, data, type, isNonenumerable = false }) => {
+const ObjectLabel = ({ name, data, context, type, isNonenumerable = false, valueDecorator }) => {
   const object = data;
   const themeStyles = useStyles('ObjectValue');
 
   const mkStyle = key => ({ ...themeStyles[key]});
+
+  const ValueDecorator =  valueDecorator || emptyDecorator;
 
   return (
     <span>
@@ -24,7 +28,7 @@ const ObjectLabel = ({ name, data, type, isNonenumerable = false }) => {
       )}
       <span>: </span>
       <span style={mkStyle('objectValueUndefined')}>{type} </span>
-      <ObjectValue object={object} type={type} />
+      <ValueDecorator data={data} context={context} name={name}><ObjectValue object={object} type={type} /></ValueDecorator>
     </span>
   );
 };
