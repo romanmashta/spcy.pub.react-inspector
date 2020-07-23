@@ -66,7 +66,7 @@ const ConnectedTreeNode = observer(props => {
 });
 
 ConnectedTreeNode.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   data: PropTypes.any,
   dataIterator: PropTypes.func,
   depth: PropTypes.number,
@@ -112,7 +112,7 @@ const TreeView = memo(
 );
 
 TreeView.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   data: PropTypes.any,
   dataIterator: PropTypes.func,
   nodeRenderer: PropTypes.func,

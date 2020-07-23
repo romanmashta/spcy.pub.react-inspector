@@ -24,7 +24,7 @@ const ObjectName = ({ name, dimmed = false, styles = {} }) => {
 
 ObjectName.propTypes = {
   /** Property name */
-  name: PropTypes.string,
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Should property name be dimmed */
   dimmed: PropTypes.bool,
 };
